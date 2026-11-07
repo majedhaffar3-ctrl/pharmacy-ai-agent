@@ -145,6 +145,30 @@
   .pc .rw span{color:var(--muted)} .pc .rw b{font-weight:700;color:var(--g1)}
   .pc .ft{background:var(--gold-soft);padding:1.8mm 4mm;font-size:8pt;color:var(--gold-t);font-weight:700;display:flex;justify-content:space-between;line-height:1.5}
 
+  /* lanyard badge */
+  .bdg{width:72mm;height:96mm;border-radius:4mm;background:#F8F3E6;border:1px solid #E6DCC3;box-shadow:0 3mm 8mm rgba(22,58,51,.18);overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:9mm}
+  .bdg .hole{position:absolute;top:3mm;left:50%;transform:translateX(-50%);width:13mm;height:2.6mm;border-radius:2mm;background:var(--g3)}
+  .bdg .seat{position:absolute;top:7mm;left:4mm;font-weight:900;color:var(--gold-t);font-size:9.5pt;line-height:1.4}
+  .bdg .bl{height:22mm;margin-top:2mm}
+  .bdg .rows{width:100%;padding:3.5mm 3.5mm 0;display:grid;gap:1.6mm}
+  .bdg .r{display:grid;grid-template-columns:25mm 1fr;border-radius:1.4mm;overflow:hidden;font-size:7.8pt;line-height:1.55}
+  .bdg .r span{background:#EFE6CF;color:var(--g1);font-weight:700;padding:1mm 2mm;white-space:nowrap}
+  .bdg .r b{background:var(--g1);color:#fff;font-weight:700;padding:1mm 2.4mm}
+  .bdg .bf{margin-top:auto;width:100%;background:var(--g1);padding:2.4mm 3mm;display:grid;grid-template-columns:1fr 1fr;gap:2.4mm}
+  .bdg .bf div{background:#F8F3E6;border-radius:1.2mm;text-align:center;padding:.6mm 1mm}
+  .bdg .bf span{display:block;font-size:6.4pt;color:var(--gold-t);font-weight:700;line-height:1.4}
+  .bdg .bf b{display:block;font-size:7.8pt;color:var(--ink);line-height:1.4}
+  .bdg.back{background:#F1EBDA;opacity:.9}
+  .bdg .visa{margin:4mm 5mm 0 auto;margin-right:auto;margin-left:5mm;width:calc(100% - 10mm);flex:1;margin-bottom:6mm;border:1.2px dashed #CDBB8E;border-radius:2.5mm;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1mm}
+  .bdg .visa span{font-weight:900;color:var(--g1);font-size:11pt;line-height:1.4}
+  .bdg .visa small{font-size:7.4pt;color:var(--muted);line-height:1.4}
+  .bdg .vl{width:70%;margin-top:3mm}
+  .bdg .vl i{display:block;height:1.6mm;border-radius:1mm;background:#DCCFAE;margin-bottom:2mm;width:100%}
+  .strap{position:absolute;bottom:calc(100% - 4.2mm);left:50%;width:11mm;height:34mm;transform:translateX(-50%);background:linear-gradient(90deg,var(--g1) 0 30%,var(--gold) 30% 70%,var(--g1) 70%);border-radius:1mm;opacity:.95}
+  /* stylistic alternates for display text */
+  h1,h2,h3,.kicker,.cta h3,.cta .u b,.js b,.st b{font-feature-settings:"salt" 1}
+  h1,h2{text-wrap:balance}
+  .cover h1{font-size:36pt}
   /* phone */
   .phone{width:66mm;height:128mm;border-radius:9mm;background:var(--g-deep);padding:3mm;box-shadow:0 3mm 8mm rgba(22,58,51,.25)}
   .phone .sc{width:100%;height:100%;border-radius:6.5mm;background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
@@ -179,7 +203,7 @@
   .cta h3{color:var(--g-deep);font-size:16pt;font-weight:900;line-height:1.4;margin-bottom:1mm}
   .cta p{font-size:10pt;color:#2E3A33;line-height:1.7}
   .cta .u{background:var(--g-deep);color:#fff;border-radius:3mm;padding:3.5mm 7mm;text-align:center;flex:none}
-  .cta .u b{display:block;font-size:13pt;font-weight:900;line-height:1.5}
+  .cta .u b{display:block;font-size:13pt;font-weight:900;line-height:1.6;margin:1mm 0}
   .cta .u small{font-size:8.4pt;color:var(--gold);line-height:1.5}
 </style>
 </head>
@@ -236,7 +260,7 @@
       <p class="lead">تعمل شركات العمرة اليوم بين منصات حكومية، وجداول <bdi class="lt">Excel</bdi>، ومجموعات واتساب، وبرنامج محاسبة منفصل. كل انتقال بينها وقت ضائع، واحتمال خطأ، وتكلفة إضافية.</p>
       <div class="band" style="margin-top:auto">
         <h3>الحل: منصة واحدة للدورة كاملة</h3>
-        <p>يُسجَّل المعتمر مرة واحدة، ثم تنتقل بياناته تلقائياً إلى نسك والقطار والعقد والبطاقة والتسكين والمحاسبة.</p>
+        <p>يُسجَّل المعتمر مرة واحدة، ثم تنتقل بياناته تلقائياً إلى نسك والقطار والعقد والباج والتسكين والمحاسبة.</p>
       </div>
     </div>
     <div class="col" style="justify-content:center">
@@ -334,7 +358,7 @@
     <div class="col">
       <div class="kicker">أتمتة إدخال البيانات · <bdi class="lt">OCR</bdi></div>
       <h2>صوّر الجواز، و<span class="gd">طوافي يكتب الباقي</span>.</h2>
-      <p class="lead">تقنية التعرّف الضوئي على الحروف (<bdi class="lt">OCR</bdi>) تقرأ صفحة الجواز وسطر <bdi class="lt">MRZ</bdi>، وتملأ ملف المعتمر في ثوانٍ. يراجع الموظف ويعتمد، ثم تنتقل البيانات نفسها إلى نسك والقطار والعقد والبطاقة.</p>
+      <p class="lead">تقنية التعرّف الضوئي على الحروف (<bdi class="lt">OCR</bdi>) تقرأ صفحة الجواز وسطر <bdi class="lt">MRZ</bdi>، وتملأ ملف المعتمر في ثوانٍ. يراجع الموظف ويعتمد، ثم تنتقل البيانات نفسها إلى نسك والقطار والعقد والباج.</p>
       <ul class="chk" style="margin-top:5mm">
         <li>كاميرا الجوال، تطبيق الماسح، أو رفع صورة أو ملف <bdi class="lt">PDF</bdi></li>
         <li>مسح دفعات كاملة من الجوازات</li>
@@ -343,7 +367,7 @@
       </ul>
       <div class="band" style="margin-top:auto">
         <h3>أدخِل مرة واحدة، واستخدم في كل مكان</h3>
-        <p>البيانات المقروءة من الجواز هي نفسها التي تُرفع على نسك، وتُحجز بها تذاكر القطار، وتُطبع في العقد والبطاقة وكشف الحدود.</p>
+        <p>البيانات المقروءة من الجواز هي نفسها التي تُرفع على نسك، وتُحجز بها تذاكر القطار، وتُطبع في العقد والباج وكشف الحدود.</p>
       </div>
     </div>
     <div class="col" style="justify-content:center;gap:4mm">
@@ -371,44 +395,50 @@
   <div class="pfoot"><span>طوافي · نظام إدارة شركات الحج والعمرة</span><bdi class="lt">Tawafe ERP</bdi></div>
 </section>
 
-<!-- ========== 6. PILGRIM CARDS ========== -->
+<!-- ========== 6. PILGRIM BADGES ========== -->
 <section class="page">
   <div class="phead"><div class="lock"><img class="m" src="brand/logo-mark.png" alt=""><div class="w"><img src="brand/word.png" alt="طوافي"><img src="brand/latin.png" alt="TAWAFE"></div></div><div class="pnum"><b>06</b> / 10</div></div>
   <div class="cols r46">
     <div class="col" style="justify-content:center">
-      <div class="kicker">بطاقات المعتمرين</div>
-      <h2>بطاقة لكل معتمر، <span class="gd">جاهزة للطباعة</span> بضغطة واحدة.</h2>
-      <p class="lead">يولّد طوافي بطاقة تعريفية لكل معتمر من بياناته في النظام مباشرة، بهوية شركتك، ولكل البرنامج دفعة واحدة. لا تصميم يدوي ولا نسخ أسماء.</p>
+      <div class="kicker">بطاقات المعتمرين · الباجات</div>
+      <h2>من كشف التسكين إلى <span class="gd">باج جاهز</span> يُعلَّق على رقبة كل معتمر.</h2>
+      <p class="lead">يسحب طوافي أسماء المعتمرين وفنادقهم وأرقام التواصل من كشف التسكين، ويولّد لكل معتمر باجاً بشعار شركتك وألوانها، جاهزاً للطباعة والتعليق بالشريطة.</p>
       <div class="grid g2" style="margin-top:5mm;gap:3mm">
-        <div class="card" style="padding:3.6mm 4mm"><h3 style="font-size:10.6pt">من بيانات النظام</h3><p>الاسم والصورة والجواز من ملف المعتمر</p></div>
-        <div class="card" style="padding:3.6mm 4mm"><h3 style="font-size:10.6pt">التسكين والنقل</h3><p>الفندق والغرفة والباص تظهر على البطاقة</p></div>
-        <div class="card" style="padding:3.6mm 4mm"><h3 style="font-size:10.6pt">طباعة جماعية</h3><p>بطاقات البرنامج كاملاً في ملف واحد</p></div>
-        <div class="card" style="padding:3.6mm 4mm"><h3 style="font-size:10.6pt">بهوية شركتك</h3><p>شعارك وألوانك وأرقام التواصل مع المشرف</p></div>
+        <div class="card" style="padding:3.4mm 4mm"><h3 style="font-size:10.6pt">جلب تلقائي</h3><p>الأسماء والفنادق والأرقام من كشف التسكين</p></div>
+        <div class="card" style="padding:3.4mm 4mm"><h3 style="font-size:10.6pt">رقم المقعد</h3><p>يظهر على باج كل معتمر لتنظيم الباصات</p></div>
+        <div class="card" style="padding:3.4mm 4mm"><h3 style="font-size:10.6pt">التأشيرة على الظهر</h3><p>كل تأشيرة تُطبع خلف باج صاحبها</p></div>
+        <div class="card" style="padding:3.4mm 4mm"><h3 style="font-size:10.6pt">جاهزة للطباعة</h3><p><bdi class="lt">PDF</bdi> بمقاس 90×120 مم، أو 4 باجات على <bdi class="lt">A4</bdi></p></div>
       </div>
-      <div class="band" style="margin-top:5mm;padding:4.5mm 6mm">
-        <p style="color:#fff;font-size:10pt">أي تعديل في التسكين أو الباص ينعكس على البطاقة عند الطباعة التالية، لأن المصدر واحد.</p>
+      <div class="band" style="margin-top:4mm;padding:4mm 6mm;display:flex;gap:4mm;align-items:center">
+        <p style="color:#fff;font-size:9.8pt">اختر البرنامج ← اضغط «جلب» ← حمّل باجات البرنامج كاملاً في ملف واحد. وفي نفس التبويبة: <b style="color:var(--gold)">بطاقات المقاعد للباصات</b>.</p>
       </div>
     </div>
     <div class="col" style="justify-content:center;align-items:center;position:relative">
-      <div style="position:absolute;width:110mm;height:110mm;border-radius:50%;background:radial-gradient(circle,rgba(197,163,90,.18),rgba(197,163,90,0) 68%)"></div>
-      <div class="pc" style="transform:rotate(-5deg) translate(-16mm,10mm);position:absolute;opacity:.5">
-        <div class="hd"><img src="brand/logo-mark-light.png" alt=""><span></span></div>
-        <div style="height:38mm;background:#fff"></div>
+      <div style="position:absolute;width:120mm;height:120mm;border-radius:50%;background:radial-gradient(circle,rgba(197,163,90,.2),rgba(197,163,90,0) 68%)"></div>
+      <!-- back badge (visa side) -->
+      <div class="bdg back" style="position:absolute;transform:translate(-36mm,20mm) rotate(-7deg)">
+        <div class="hole"></div>
+        <div class="visa" style="width:30mm;flex:none;height:62mm;align-self:flex-end;margin:3mm 4mm 0 4mm"><span>التأشيرة</span><small>خلف الباج</small><div class="vl"><i></i><i></i><i style="width:60%"></i><i style="width:75%"></i></div></div>
       </div>
-      <div class="pc" style="position:relative;transform:rotate(2deg)">
-        <div class="hd"><img src="brand/logo-mark-light.png" alt=""><span>بطاقة معتمر</span></div>
-        <div class="bd">
-          <div class="ph"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#1F4D44" stroke-opacity=".45" stroke-width="1.5"><circle cx="12" cy="9" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
-          <div>
-            <div class="nm">اسم المعتمر</div>
-            <div class="rw"><span>رقم الجواز</span><b><bdi class="lt">A0000000</bdi></b></div>
-            <div class="rw"><span>البرنامج</span><b>عمرة 14 يوم</b></div>
-            <div class="rw"><span>الفندق · الغرفة</span><b>مكة · 512</b></div>
-            <div class="rw" style="border:0"><span>الباص</span><b>3</b></div>
-          </div>
+      <!-- front badge with lanyard -->
+      <div style="position:relative;transform:rotate(2deg);margin-top:30mm">
+      <div class="strap"></div>
+      <div class="bdg" style="position:relative">
+        <div class="hole"></div>
+        <div class="seat">مقعد 12</div>
+        <img class="bl" src="brand/logo-full.png" alt="شعار الشركة">
+        <div class="rows">
+          <div class="r"><span>الاسم</span><b>اسم المعتمر</b></div>
+          <div class="r"><span>السكن في مكة</span><b>فندق مكة</b></div>
+          <div class="r"><span>السكن في المدينة</span><b>فندق المدينة</b></div>
         </div>
-        <div class="ft"><span>مشرف المجموعة</span><bdi class="lt">05X XXX XXXX</bdi></div>
+        <div class="bf">
+          <div><span>رقم المندوب</span><b><bdi class="lt">05XXXXXXXX</bdi></b></div>
+          <div><span>رقم الشيخ</span><b><bdi class="lt">05XXXXXXXX</bdi></b></div>
+        </div>
       </div>
+      </div>
+      <span class="tag" style="position:absolute;bottom:2mm;background:#fff">نموذج توضيحي · بشعار شركتك</span>
     </div>
   </div>
   <div class="pfoot"><span>طوافي · نظام إدارة شركات الحج والعمرة</span><bdi class="lt">Tawafe ERP</bdi></div>
@@ -424,6 +454,7 @@
       <p class="lead">يسجّل الموظف حضوره وانصرافه من جواله، ويرى المدير دوام فريقه يومياً في لوحة واحدة، مع تقارير شهرية جاهزة.</p>
       <ul class="chk" style="margin-top:5mm">
         <li>تسجيل حضور وانصراف بضغطة من الجوال</li>
+        <li>التحضير من موقع العمل عبر <bdi class="lt">GPS</bdi></li>
         <li>سجل يومي لكل موظف بالوقت الدقيق</li>
         <li>رصد التأخير والغياب تلقائياً</li>
         <li>تقرير شهري قابل للتصدير إلى <bdi class="lt">Excel</bdi></li>
@@ -513,7 +544,7 @@
     <h2 style="margin-bottom:0">كل ما تحتاجه شركة العمرة، في <span class="gd">نظام واحد</span>.</h2>
     <p class="lead">إلى جانب الميزات الرئيسية، يغطي طوافي التشغيل اليومي من أول تواصل مع العميل حتى عودته.</p>
   </div>
-  <div class="grid g4" style="margin-top:8mm;gap:4mm">
+  <div class="grid g4" style="margin-top:5mm;gap:3.5mm">
     <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></div><h3>المبيعات <bdi class="lt">(CRM)</bdi></h3><p>العملاء والمتابعات ومنع تكرار الأرقام.</p></div>
     <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 16c1.5-2 2.5 1 4-1s2 1 3.5 0"/></svg></div><h3>العقود الإلكترونية</h3><p>عقد بهويتك يُوقَّع إلكترونياً عبر رابط.</p></div>
     <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div><h3>البرامج والباقات</h3><p>الفنادق والتواريخ والأسعار ومعتمرو كل برنامج.</p></div>
@@ -523,15 +554,15 @@
     <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>الصلاحيات</h3><p>دور لكل موظف وسجل بكل عملية.</p></div>
     <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><circle cx="16" cy="12" r="4"/></svg></div><h3>الشراكات</h3><p>مشاركة برامج ودفاتر مع شركة شريكة بحدود تضبطها.</p></div>
   </div>
-  <div class="card" style="margin-top:6mm;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:6mm;align-items:center;border:1.5px solid var(--g1);padding:4.5mm 5mm">
+  <div class="card" style="margin-top:3.5mm;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:6mm;align-items:center;border:1.5px solid var(--g1);padding:3.5mm 5mm">
     <div class="ico" style="margin:0;background:var(--g1)"><svg viewBox="0 0 24 24" style="stroke:#fff"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
     <div><h3 style="font-size:10.6pt;margin:0">عزل كامل للبيانات</h3><p class="small">بيانات كل شركة معزولة على مستوى قاعدة البيانات</p></div>
     <div><h3 style="font-size:10.6pt;margin:0">سجل تدقيق</h3><p class="small">كل تعديل مسجّل بالمستخدم والوقت</p></div>
     <div><h3 style="font-size:10.6pt;margin:0">نسخ احتياطي يومي</h3><p class="small">بياناتك محفوظة وقابلة للاسترجاع</p></div>
   </div>
-  <div style="margin-top:5mm;display:flex;justify-content:space-between;align-items:center;gap:6mm;background:var(--gold-soft);border:1px solid #E6D7B1;border-radius:4mm;padding:3.6mm 5mm">
-    <h3 style="margin:0;color:var(--g1);font-size:12.5pt">والكثير الكثير من المزايا الأخرى…</h3>
-    <span style="font-size:10pt;color:var(--gold-t);font-weight:700">احجز موعد اجتماع لشرح النظام بالتفصيل</span>
+  <div style="margin-top:3.5mm;display:flex;justify-content:space-between;align-items:center;gap:6mm;background:var(--gold-soft);border:1px solid #E6D7B1;border-radius:4mm;padding:3.6mm 5mm">
+    <h3 style="margin:0;color:var(--g1);font-size:12.5pt">وهناك الكثير من المزايا الأخرى…</h3>
+    <span style="font-size:10pt;color:var(--gold-t);font-weight:700">احجز موعداً مجانياً مع مستشار تطوير الأعمال لدينا</span>
   </div>
   <div class="pfoot"><span>طوافي · نظام إدارة شركات الحج والعمرة</span><bdi class="lt">Tawafe ERP</bdi></div>
 </section>
@@ -549,20 +580,20 @@
   <div class="grid" style="grid-template-columns:1fr 64mm;gap:16mm;position:relative;height:149mm;align-items:center">
     <div>
       <div class="kicker">رحلة المعتمر داخل طوافي</div>
-      <h2>من التسجيل حتى العودة، <span style="color:var(--gold)">دون إدخال البيانات مرتين</span>.</h2>
+      <h2 style="font-size:22pt">من التسجيل حتى العودة، <span style="color:var(--gold)">دون إدخال البيانات مرتين</span>.</h2>
       <div class="jr" style="margin-top:5mm">
         <div class="js"><b>التسجيل والعقد</b><span>عميل يتحول إلى معتمر بعقد موقَّع</span></div>
         <div class="js"><b>مسح الجواز</b><span>تقنية <bdi class="lt">OCR</bdi> تملأ الملف</span></div>
         <div class="js"><b>الرفع على نسك</b><span>تلقائياً وبلا وسيط</span></div>
         <div class="js"><b>قطار الحرمين</b><span>ذهاب وعودة آلياً</span></div>
-        <div class="js"><b>البطاقة والتسكين</b><span>الغرف والباصات والبطاقات</span></div>
+        <div class="js"><b>الباج والتسكين</b><span>الغرف والمقاعد وباج المعتمر</span></div>
         <div class="js"><b>كشف الحدود</b><span>من نفس البيانات</span></div>
         <div class="js"><b>فريق منضبط</b><span>تحضير الموظفين يومياً</span></div>
         <div class="js"><b>المحاسبة</b><span>الربحية وتصدير <bdi class="lt">Excel</bdi></span></div>
       </div>
       <div class="cta" style="margin-top:6mm">
-        <div><h3>والكثير الكثير من المزايا الأخرى…</h3><p>ما في هذا الملف جزء مما يقدّمه طوافي. احجز موعد اجتماع مع فريقنا لشرح النظام بالتفصيل وتجربته على بياناتك.</p></div>
-        <div class="u"><b>احجز موعد اجتماع</b><small><bdi class="lt">tawafe.com</bdi></small></div>
+        <div><h3>وهناك الكثير من المزايا…</h3><p>احجز موعداً مجانياً مع مستشار تطوير الأعمال لدينا، ليشرح لك النظام بالتفصيل ويجرّبه معك على بياناتك.</p></div>
+        <div class="u"><small style="display:block;color:#fff;font-size:8.6pt">احجز موعدك المجاني عبر واتساب</small><b class="wa"><svg viewBox="0 0 24 24" style="width:4.6mm;height:4.6mm;vertical-align:-0.8mm;margin-left:1.5mm;fill:#25D366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.6-.1 1.2z"/></svg><bdi class="lt">+966 5X XXX XXXX</bdi></b><small><bdi class="lt">tawafe.com</bdi></small></div>
       </div>
     </div>
     <div style="display:grid;place-items:center">
